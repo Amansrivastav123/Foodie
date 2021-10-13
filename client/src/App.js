@@ -6,6 +6,8 @@ import { Admin } from './Users/Pages/Admin';
 import { Driver } from './Users/Pages/Driver';
 import { Registration } from './Users/Components/Registration';
 import { AdminHome } from './Users/Pages/AdminHome';
+import { RestaurantHome } from './Users/Pages/RestaurantHome';
+import { DriverHome } from './Users/Pages/DriverHome';
 function App() {
   return (
     <Router>
@@ -16,8 +18,14 @@ function App() {
       <Route path="/restaurant" exact>
         <Restaurant />
       </Route>
+      <Route path="/restaurant/u1/orders" exact>
+        <RestaurantHome />
+      </Route>
       <Route path="/driver" exact>
         <Driver />
+      </Route>
+      <Route path="/driver/u1/orders" exact>
+        <DriverHome />
       </Route>
       <Route path="/admin" exact>
         <Admin />
