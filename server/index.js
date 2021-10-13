@@ -22,6 +22,28 @@ app.post('/register',(req,res)=>{
         console.log(err);
     })
 })
+
+app.post('/login/foodie',(req,res)=()=>{
+
+    
+    const foodie_mobile= req.body.username
+    const foodie_password= req.body.password
+
+    db.query("SELECT * FROM foodie WHERE foodie_mobile= ? AND foodie_password = ?",[foodie_mobile,foodie_password],(err,result)=>{
+       if(err)
+       {
+            res.send(err);
+       }
+       if(result.length>0)
+        {
+            res.send(result);
+        }else{
+            res.send({message:"Invalid mobile and password combination"})
+        }
+       
+        
+    })
+})
 app.listen(3001,()=>{
     console.log("running on port 3001")
 })
