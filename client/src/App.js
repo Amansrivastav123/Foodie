@@ -5,6 +5,7 @@ import { Restaurant } from './Users/Pages/Restaurant';
 import { Admin } from './Users/Pages/Admin';
 import { Driver } from './Users/Pages/Driver';
 import { Registration } from './Users/Components/Registration';
+import { AdminHome } from './Users/Pages/AdminHome';
 function App() {
   return (
     <Router>
@@ -20,6 +21,9 @@ function App() {
       </Route>
       <Route path="/admin" exact>
         <Admin />
+      </Route>
+      <Route path="/admin/home" exact>
+        <AdminHome home= {true}/>
       </Route>
       <Route path="/foodieRegistration" exact>
         <Registration foodie={true} restaurant={false} driver={false} name="Foodie" loginPage="" />

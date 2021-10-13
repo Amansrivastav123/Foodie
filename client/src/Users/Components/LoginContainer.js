@@ -54,8 +54,8 @@ export const LoginContainer = (props) => {
       //this token can be anything. You can use random.org to generate a random string;
       const token = "123456abcdef";
       sessionStorage.setItem("auth-token", token);
-      //go to www.website.com/todo
-      history.push("/todo");
+      //go to www.website.com/admin/home
+      history.push("/admin/home");
     } else {
       //bad combination
       alert("wrong email or password combination");
