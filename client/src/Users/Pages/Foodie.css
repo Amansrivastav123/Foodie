@@ -1,0 +1,71 @@
+.bg{
+    background: url(../../Image/4.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+}
+
+.footer {
+    margin-top: 55px;
+    display: block;
+    overflow: hidden;
+    padding: 15px 0px 0px 0px;
+    box-sizing: border-box;
+    background-color: #18181a;
+}
+
+.innerfooter {
+    display: block;
+    margin: 0 auto;
+    width: 1100px;
+    height: 75px;
+}
+
+.innerfooter .logo_container {
+    width: 80px;
+    float: left;
+    height: 100%;
+    display: block;
+}
+
+.innerfooter .logo_container img {
+    width: 65px;
+    height: auto;
+}
+
+.innerfooter .footer_third {
+    width: 330px;
+    margin-right: 10px;
+    float: left;
+    height: 100%;
+
+}
+
+.innerfooter .footer_third:last-child {
+    margin-right: 0;
+}
+
+.innerfooter .footer_third h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: white;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.innerfooter .footer_third a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: white;
+    display: block;
+    width: 100%;
+    font-weight: 200;
+    padding-bottom: 5px;
+}
+
+a:hover {
+    text-decoration: underline;
+}

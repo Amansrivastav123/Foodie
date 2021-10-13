@@ -1,0 +1,237 @@
+.container-image {
+  width: 140px;
+  border-radius: 50%;
+}
+
+h3 {
+  font-family: cursive;
+}
+
+
+.fade {
+    width: 140px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: none;
+    color: black;
+    transition: background-color 0.5s;
+    font-family: Okra, Helvetica, sans-serif;
+  }
+
+  .fade:hover {
+    background-color: orange;
+    color: white;
+  }
+
+  .fade:focus,
+  .fade:active {
+    background-color: black;
+    transition: none;
+  }
+.input {
+    width: 99%;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    height: 25px;
+    border-width: 0px 0px 2px 0px;
+    border-style: solid;
+    text-align: center;
+    border-radius: 10px 10px 10px;
+    font-size: 14px;
+    outline: none;
+  }
+
+.input:focus{
+    border-width: 0px 0px 2px 0px;
+    border-color:red;
+    border-style: groove;
+}
+span {
+  font-family: cursive;
+  color: white;
+}
+.loginContainer {
+  margin-top: 0px;
+  width: 300px;
+  height: fit-content;
+  background-color: rgba(220, 220, 220, 0);
+  color:white;
+  border-radius: 10px;
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+}
+.strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 10px;
+
+  }
+
+  .strike>span {
+    position: relative;
+    display: inline-block;
+  }
+
+  .strike>span:before,
+  .strike>span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 1px;
+    background: gray;
+  }
+
+  .strike>span:before {
+    right: 100%;
+    margin-right: 15px;
+  }
+
+  .strike>span:after {
+    left: 100%;
+    margin-left: 15px;
+  }
+
+h4 {
+  text-align: left;
+  margin-bottom: 0px;
+  font-weight: 400;
+  font-family: Okra, Helvetica, sans-serif;
+}
+
+h5 {
+  text-align: left;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.rainbow {
+  /* Font options */
+  font-family: "Pacifico", cursive;
+
+  /* Chrome, Safari, Opera */
+  -webkit-animation: rainbow 5s infinite;
+
+  /* Internet Explorer */
+  -ms-animation: rainbow 5s infinite;
+
+  /* Standar Syntax */
+  animation: rainbow 5s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rainbow {
+  0% {
+    color: orange;
+  }
+  10% {
+    color: purple;
+  }
+  20% {
+    color: red;
+  }
+  30% {
+    color: CadetBlue;
+  }
+  40% {
+    color: yellow;
+  }
+  50% {
+    color: coral;
+  }
+  60% {
+    color: green;
+  }
+  70% {
+    color: cyan;
+  }
+  80% {
+    color: DeepPink;
+  }
+  90% {
+    color: DodgerBlue;
+  }
+  100% {
+    color: orange;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes rainbow {
+  0% {
+    color: orange;
+  }
+  10% {
+    color: purple;
+  }
+  20% {
+    color: red;
+  }
+  30% {
+    color: CadetBlue;
+  }
+  40% {
+    color: yellow;
+  }
+  50% {
+    color: coral;
+  }
+  60% {
+    color: green;
+  }
+  70% {
+    color: cyan;
+  }
+  80% {
+    color: DeepPink;
+  }
+  90% {
+    color: DodgerBlue;
+  }
+  100% {
+    color: orange;
+  }
+}
+
+/* Standar Syntax */
+@keyframes rainbow {
+  0% {
+    color: orange;
+  }
+  10% {
+    color: purple;
+  }
+  20% {
+    color: red;
+  }
+  30% {
+    color: CadetBlue;
+  }
+  40% {
+    color: yellow;
+  }
+  50% {
+    color: coral;
+  }
+  60% {
+    color: green;
+  }
+  70% {
+    color: cyan;
+  }
+  80% {
+    color: DeepPink;
+  }
+  90% {
+    color: DodgerBlue;
+  }
+  100% {
+    color: orange;
+  }
+}

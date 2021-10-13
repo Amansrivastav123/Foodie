@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  .inline {
+    display: inline-block;
+  }
+
+  .topnav-right {
+    float: right;
+    margin-right: 15px;
+     margin-left:auto;
+  }
+
+  .topnav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+
+  h1
+  {
+    font-family:cursive;
+    font-size: 35px;
+    color: orange;
+    font-size: 40px;
+  }
+
+  
+  #logo {
+    width: 55px;
+    height: 35px;
+    border-radius: 10%;
+  }
+
+
+  .fade {
+    width: 250px;
+    height: 30px;
+    margin-top: 30px;
+    border-radius: 5px;
+    font-style: oblique;
+border:none;
+color:black;
+transition: background-color 0.5s;
+}
+
+.fade:hover {
+    background-color:orange ;
+    color: white;
+  }
+  
+  .fade:focus,
+  .fade:active {
+    background-color: black;
+    transition: none;
+  }
