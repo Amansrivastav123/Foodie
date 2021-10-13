@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Axios from 'axios';
+
 
 import "./LoginContainer.css";
 
@@ -29,7 +31,7 @@ export const LoginContainer = (props) => {
   return (
     <div className="loginContainer">
       <center>
-        <h2>{LoginStatus}</h2>
+        <h4 className="mssg">{LoginStatus}</h4>
         <img src={props.image} className="container-image" alt="" />
         <h3 className="rainbow">{props.loginType} Login</h3>
         <form>

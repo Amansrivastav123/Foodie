@@ -23,7 +23,7 @@ app.post('/register',(req,res)=>{
     })
 })
 
-app.post('/login/foodie',(req,res)=()=>{
+app.post('/login/foodie',(req,res)=>{
 
     
     const foodie_mobile= req.body.username
