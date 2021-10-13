@@ -19,6 +19,11 @@ export const Registration = (props) => {
       console.log(response);
     });
   };
+
+
+
+
+  
   return (
     <>
       <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">

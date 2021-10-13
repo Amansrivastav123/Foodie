@@ -16,6 +16,8 @@ export const Foodie = () => {
           image={image}
           link="foodieRegistration"
           login="foodie"
+          foodie={true}
+          admin ={false}
         />
       </div>
       <div class="footer">

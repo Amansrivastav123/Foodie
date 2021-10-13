@@ -1,32 +1,66 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Axios from 'axios';
-
+import Axios from "axios";
+import { useHistory } from "react-router";
 
 import "./LoginContainer.css";
 
 export const LoginContainer = (props) => {
+  const history = useHistory();
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
-  
-  const [LoginStatus, setLoginStatus] = useState("")
 
-  const login = ()=>
-  {
+  const [LoginStatus, setLoginStatus] = useState("");
+
+  const login = () => {
     Axios.post(`http://localhost:3001/login/${props.login}`, {
       username: username,
       password: password,
     }).then((response) => {
-      if(response.data.message)
-      {
-        setLoginStatus(response.data.message)
+      if (response.data.message) {
+        setLoginStatus(response.data.message);
+      } else {
+        <Link to="/" exact />;
       }
-      else{
-        <Link to="/" exact />
-      }
-      
     });
-  }
+  };
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    let hardcodedCred = [
+      {
+        email: "email@email.com",
+        password: "password123",
+      },
+      {
+        email: "email@email.com",
+        password: "password123",
+      },
+      {
+        email: "email@email.com",
+        password: "password123",
+      },
+    ];
+
+    if (
+      (username === hardcodedCred[0].email &&
+        password === hardcodedCred[0].password) ||
+      (username === hardcodedCred[1].email &&
+        password === hardcodedCred[1].password) ||
+      (username === hardcodedCred[2].email &&
+        password === hardcodedCred[2].password)
+    ) {
+      //combination is good. Log them in.
+      //this token can be anything. You can use random.org to generate a random string;
+      const token = "123456abcdef";
+      sessionStorage.setItem("auth-token", token);
+      //go to www.website.com/todo
+      history.push("/todo");
+    } else {
+      //bad combination
+      alert("wrong email or password combination");
+    }
+  };
 
   return (
     <div className="loginContainer">
@@ -57,7 +91,28 @@ export const LoginContainer = (props) => {
               setpassword(e.target.value);
             }}
           />
-          <input type="submit" name="submit" value="Login" className="fade" onClick={login}/>
+          {props.foodie ? (
+            <input
+              type="submit"
+              name="submit"
+              value="Login"
+              className="fade"
+              onClick={login}
+            />
+          ) : (
+            ""
+          )}
+          {props.admin ? (
+            <input
+              type="submit"
+              name="submit"
+              value="Login"
+              className="fade"
+              onClick={handleLoginSubmit}
+            />
+          ) : (
+            ""
+          )}
         </form>
 
         {props.account ? (
