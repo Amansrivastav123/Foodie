@@ -18,7 +18,7 @@ app.post('/register',(req,res)=>{
     const foodie_mobile= req.body.mobile
     const foodie_password= req.body.password
 
-    db.query("INSERT INTO foodie(fname, lname,foodie_mobile,foodie_password) VALUES (?,?,?,?)",(fname, lname,foodie_mobile,foodie_password),(err,result)=>{
+    db.query("INSERT INTO foodie(fname, lname,foodie_mobile,foodie_password) VALUES (?,?,?,?)",[fname, lname,foodie_mobile,foodie_password],(err,result)=>{
         console.log(err);
     })
 })
