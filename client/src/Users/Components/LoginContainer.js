@@ -29,16 +29,16 @@ export const LoginContainer = (props) => {
     e.preventDefault();
     let hardcodedCred = [
       {
-        email: "email@email.com",
-        password: "password123",
+        email: "aman123@gmail.com",
+        password: "aman123",
       },
       {
-        email: "email@email.com",
-        password: "password123",
+        email: "jayant123@gmail.com",
+        password: "jayant123",
       },
       {
-        email: "email@email.com",
-        password: "password123",
+        email: "akshay123@gmail.com",
+        password: "akshay123",
       },
     ];
 
