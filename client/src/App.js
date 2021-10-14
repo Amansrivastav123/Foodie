@@ -8,12 +8,14 @@ import { Registration } from './Users/Components/Registration';
 import { AdminHome } from './Users/Pages/AdminHome';
 import { RestaurantHome } from './Users/Pages/RestaurantHome';
 import { DriverHome } from './Users/Pages/DriverHome';
+
 function App() {
   return (
     <Router>
       <Switch>
       <Route path="/" exact>
         <Foodie />
+     
       </Route>
       <Route path="/restaurant" exact>
         <Restaurant />

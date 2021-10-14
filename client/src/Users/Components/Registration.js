@@ -20,10 +20,6 @@ export const Registration = (props) => {
     });
   };
 
-
-
-
-  
   return (
     <>
       <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
@@ -51,6 +47,7 @@ export const Registration = (props) => {
                         type="text"
                         placeholder="First Name"
                         name="fname"
+                        required
                         onChange={(e) => {
                           setfname(e.target.value);
                         }}
@@ -62,6 +59,7 @@ export const Registration = (props) => {
                         type="text"
                         placeholder="Last Name"
                         name="lname"
+                        required
                         onChange={(e) => {
                           setlname(e.target.value);
                         }}
@@ -73,6 +71,7 @@ export const Registration = (props) => {
                         type="text"
                         placeholder="Mobile"
                         name="foodie_mobile"
+                        required
                         onChange={(e) => {
                           setfoodie_mobile(e.target.value);
                         }}
@@ -84,6 +83,7 @@ export const Registration = (props) => {
                         type="password"
                         placeholder="Password"
                         name="foodie_password"
+                        required
                         onChange={(e) => {
                           setfoodie_password(e.target.value);
                         }}

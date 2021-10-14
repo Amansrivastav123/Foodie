@@ -13,14 +13,18 @@ const db= mysql.createConnection({
 
 
 app.post('/register',(req,res)=>{
+
     const fname= req.body.firstname
     const lname= req.body.lastname
     const foodie_mobile= req.body.mobile
     const foodie_password= req.body.password
-
-    db.query("INSERT INTO foodie(fname, lname,foodie_mobile,foodie_password) VALUES (?,?,?,?)",[fname, lname,foodie_mobile,foodie_password],(err,result)=>{
-        console.log(err);
-    })
+        if(fname&&lname&&foodie_mobile&&foodie_password)
+        {
+            db.query("INSERT INTO foodie(fname, lname,foodie_mobile,foodie_password) VALUES (?,?,?,?)",[fname, lname,foodie_mobile,foodie_password],(err,result)=>{
+                console.log(err);
+            })
+        }
+    
 })
 
 app.post('/login/foodie',(req,res)=>{
@@ -52,14 +56,14 @@ app.post('/login/restaurant',(req,res)=>{
     const restaurant_username= req.body.username
     const restaurant_password= req.body.password
 
-    db.query("SELECT * FROM restaurant WHERE restaurant_username= ? AND restaurant_password = ?",[restaurant_username,restaurant_password],(err,result)=>{
+    db.query("SELECT * FROM restaurant WHERE restaurant_username= ? AND restaurant_password = ?",[restaurant_username,restaurant_password],(err,output)=>{
        if(err)
        {
             res.send(err);
        }
-       if(result.length>0)
+       if(output.length>0)
         {
-            res.send(result);
+            res.send(output);
         }else{
             res.send({message:"Invalid mobile and password combination"})
         }

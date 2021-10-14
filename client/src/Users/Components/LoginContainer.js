@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import { useHistory } from "react-router";
-import { useParams } from "react-router-dom";
+
 
 import "./LoginContainer.css";
 
@@ -21,7 +21,7 @@ export const LoginContainer = (props) => {
       if (response.data.message) {
         setLoginStatus(response.data.message);
       } else {
-        <Link to={`/${response.data.F_id}/Home`} exact />;
+        <Link to={`/restaurant`} exact />;
       }
     });
   };
@@ -34,7 +34,7 @@ export const LoginContainer = (props) => {
       if (response.data.message) {
         setLoginStatus(response.data.message);
       } else {
-        <Link to={`/:${response.data.R_id}/orders`} exact />;
+        history.push("/")
         console.log(response);
       }
     });
