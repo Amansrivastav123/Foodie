@@ -44,6 +44,29 @@ app.post('/login/foodie',(req,res)=>{
         
     })
 })
+
+
+app.post('/login/restaurant',(req,res)=>{
+
+    
+    const restaurant_username= req.body.username
+    const restaurant_password= req.body.password
+
+    db.query("SELECT * FROM restaurant WHERE restaurant_username= ? AND restaurant_password = ?",[restaurant_username,restaurant_password],(err,result)=>{
+       if(err)
+       {
+            res.send(err);
+       }
+       if(result.length>0)
+        {
+            res.send(result);
+        }else{
+            res.send({message:"Invalid mobile and password combination"})
+        }
+       
+        
+    })
+})
 app.listen(3001,()=>{
     console.log("running on port 3001")
 })

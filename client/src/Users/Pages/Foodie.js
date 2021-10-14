@@ -15,9 +15,10 @@ export const Foodie = () => {
           signup="Signup"
           image={image}
           link="foodieRegistration"
-          login="foodie"
           foodie={true}
           admin ={false}
+          restaurant ={false}
+          driver ={false}
         />
       </div>
       <div class="footer">

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import { useHistory } from "react-router";
+import { useParams } from "react-router-dom";
 
 import "./LoginContainer.css";
 
@@ -12,15 +13,29 @@ export const LoginContainer = (props) => {
 
   const [LoginStatus, setLoginStatus] = useState("");
 
-  const login = () => {
-    Axios.post(`http://localhost:3001/login/${props.login}`, {
+  const loginFoodie = () => {
+    Axios.post(`http://localhost:3001/login/foodie`, {
       username: username,
       password: password,
     }).then((response) => {
       if (response.data.message) {
         setLoginStatus(response.data.message);
       } else {
-        <Link to="/" exact />;
+        <Link to={`/${response.data.F_id}/Home`} exact />;
+      }
+    });
+  };
+
+  const loginRestaurant = () => {
+    Axios.post(`http://localhost:3001/login/restaurant`, {
+      username: username,
+      password: password,
+    }).then((response) => {
+      if (response.data.message) {
+        setLoginStatus(response.data.message);
+      } else {
+        <Link to={`/:${response.data.R_id}/orders`} exact />;
+        console.log(response);
       }
     });
   };
@@ -97,12 +112,34 @@ export const LoginContainer = (props) => {
               name="submit"
               value="Login"
               className="fade"
-              onClick={login}
+              onClick={loginFoodie}
             />
           ) : (
             ""
           )}
           {props.admin ? (
+            <input
+              type="submit"
+              name="submit"
+              value="Login"
+              className="fade"
+              onClick={handleLoginSubmit}
+            />
+          ) : (
+            ""
+          )}
+          {props.restaurant ? (
+            <input
+              type="submit"
+              name="submit"
+              value="Login"
+              className="fade"
+              onClick={loginRestaurant}
+            />
+          ) : (
+            ""
+          )}
+          {props.driver ? (
             <input
               type="submit"
               name="submit"

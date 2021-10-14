@@ -18,7 +18,7 @@ function App() {
       <Route path="/restaurant" exact>
         <Restaurant />
       </Route>
-      <Route path="/restaurant/u1/orders" exact>
+      <Route path="/restaurant/:R_id/orders" exact>
         <RestaurantHome />
       </Route>
       <Route path="/driver" exact>
