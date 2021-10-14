@@ -4,13 +4,15 @@ const mysql=require('mysql');
 const cors =require('cors')
 app.use(express.json());
 app.use(cors());
-const db= mysql.createConnection({
+
+const db= mysql.createPool({
     host:'localhost',
     user:'root',
     password:'',
     database:'foodie'
 })
 
+ 
 
 app.post('/register',(req,res)=>{
 
@@ -26,6 +28,23 @@ app.post('/register',(req,res)=>{
         }
     
 })
+
+app.post('/requestdriver',(req,res)=>{
+
+    const driver_name= req.body.d_name
+    const driver_mobile= req.body.d_mobile
+    const driver_city= req.body.d_city
+    const driver_password= req.body.d_password
+        if(driver_name&&driver_mobile&&driver_city&&driver_password)
+        {
+            db.query("INSERT INTO driverrequest(driver_name,driver_mobile,driver_city,driver_password) VALUES (?,?,?,?)",[driver_name,driver_mobile,driver_city,driver_password],(err,result)=>{
+                console.log(err);
+            })
+        }
+    
+})
+
+
 
 app.post('/login/foodie',(req,res)=>{
 
@@ -50,27 +69,6 @@ app.post('/login/foodie',(req,res)=>{
 })
 
 
-app.post('/login/restaurant',(req,res)=>{
-
-    
-    const restaurant_username= req.body.username
-    const restaurant_password= req.body.password
-
-    db.query("SELECT * FROM restaurant WHERE restaurant_username= ? AND restaurant_password = ?",[restaurant_username,restaurant_password],(err,output)=>{
-       if(err)
-       {
-            res.send(err);
-       }
-       if(output.length>0)
-        {
-            res.send(output);
-        }else{
-            res.send({message:"Invalid mobile and password combination"})
-        }
-       
-        
-    })
-})
 app.listen(3001,()=>{
     console.log("running on port 3001")
 })

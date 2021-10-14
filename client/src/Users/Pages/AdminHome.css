@@ -1,14 +1,21 @@
-
-
-.request-container {
-  margin-top: 50px;
-  padding: 20px;
-  height: 200px;
-  background-color: red;
-  margin-bottom: 20px   ;
-  overflow: auto;
-  white-space: nowrap;
+.container
+{
+    width: 800px;
+    height: 200px;
+    background-color: white;
+    overflow-y: scroll;
+    border-radius: 10%;
+    padding: 10px 10px 20px;
+    box-shadow: 10px 5px 5px black;
+    margin-bottom: 10px;
+    
 }
+table.test { border-collapse: collapse; }
+table.test td { border-bottom: 1px solid black; 
+padding-left: 10px;}
+table.test th{ padding-left: 10px;}
+
+
 
 
 .title {

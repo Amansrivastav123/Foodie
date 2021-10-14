@@ -1,25 +1,11 @@
 import React, { useState } from "react";
 import "./Registration.css";
-import Axios from "axios";
-
-import { Link } from "react-router-dom";
+ import { Link } from "react-router-dom";
+import { RestaurantRegistration } from "./RestaurantRegistration";
+import { FoodieRegistration } from "./FoodieRegistration";
+import { DriverRegistration } from "./DriverRegistration";
 export const Registration = (props) => {
-  const [fname, setfname] = useState("");
-  const [lname, setlname] = useState("");
-  const [foodie_mobile, setfoodie_mobile] = useState("");
-  const [foodie_password, setfoodie_password] = useState("");
-
-  const registerfoodie = () => {
-    Axios.post("http://localhost:3001/register", {
-      firstname: fname,
-      lastname: lname,
-      mobile: foodie_mobile,
-      password: foodie_password,
-    }).then((response) => {
-      console.log(response);
-    });
-  };
-
+  
   return (
     <>
       <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
@@ -40,186 +26,19 @@ export const Registration = (props) => {
               <hr />
               <form method="POST">
                 {props.foodie ? (
-                  <>
-                    <div class="input-group">
-                      <input
-                        class="input--style-2"
-                        type="text"
-                        placeholder="First Name"
-                        name="fname"
-                        required
-                        onChange={(e) => {
-                          setfname(e.target.value);
-                        }}
-                      />
-                    </div>
-                    <div class="input-group">
-                      <input
-                        class="input--style-2"
-                        type="text"
-                        placeholder="Last Name"
-                        name="lname"
-                        required
-                        onChange={(e) => {
-                          setlname(e.target.value);
-                        }}
-                      />
-                    </div>
-                    <div class="input-group">
-                      <input
-                        class="input--style-2"
-                        type="text"
-                        placeholder="Mobile"
-                        name="foodie_mobile"
-                        required
-                        onChange={(e) => {
-                          setfoodie_mobile(e.target.value);
-                        }}
-                      />
-                    </div>
-                    <div class="input-group">
-                      <input
-                        class="input--style-2"
-                        type="password"
-                        placeholder="Password"
-                        name="foodie_password"
-                        required
-                        onChange={(e) => {
-                          setfoodie_password(e.target.value);
-                        }}
-                      />
-                    </div>
-                    <div class="input-group">
-                      <input
-                        class="input--style-2"
-                        type="password"
-                        placeholder="Confirm Password"
-                      />
-                    </div>
-                    <div class="p-t-30">
-                      <input
-                        class="btn btn--radius btn--green"
-                        type="submit"
-                        value="Signin"
-                        onClick={registerfoodie}
-                      />
-                    </div>
-                  </>
+                  <FoodieRegistration/>
                 ) : (
                   ""
                 )}
 
                 {props.driver ? (
-                  <>
-                    <div class="input-group">
-                      <input
-                        class="input--style-2"
-                        type="text"
-                        placeholder="Name"
-                        name="driver_name"
-                      />
-                    </div>
-
-                    <div class="input-group">
-                      <input
-                        class="input--style-2"
-                        type="text"
-                        placeholder="Mobile"
-                        name="driver_mobile"
-                      />
-                    </div>
-                    <div class="input-group">
-                      <input
-                        class="input--style-2"
-                        type="text"
-                        placeholder="Password"
-                        name="driver_password"
-                      />
-                    </div>
-                    <div class="input-group">
-                      <input
-                        class="input--style-2"
-                        type="password"
-                        placeholder="Confirm Password"
-                      />
-                    </div>
-                    <div class="p-t-30">
-                      <input
-                        class="btn btn--radius btn--green"
-                        type="submit"
-                        value="Signin"
-                      />
-                    </div>
-                  </>
+                  <DriverRegistration/>
                 ) : (
                   ""
                 )}
 
                 {props.restaurant ? (
-                  <>
-                    <div class="input-group">
-                      <input
-                        class="input--style-2"
-                        type="text"
-                        placeholder="Enter Restaurant Name"
-                        name="restaurant_name"
-                      />
-                    </div>
-                    <div class="input-group">
-                      <input
-                        class="input--style-2"
-                        type="text"
-                        placeholder="Mobile"
-                        name="restaurant_mobile"
-                      />
-                    </div>
-                    <div class="input-group">
-                      <input
-                        class="input--style-2"
-                        type="text"
-                        placeholder="City"
-                        name="restaurant_city"
-                      />
-                    </div>
-                    <div class="input-group">
-                      <input
-                        class="input--style-2"
-                        type="text"
-                        placeholder="State"
-                        name="restaurant_State"
-                      />
-                    </div>
-                    <div class="input-group">
-                      <input
-                        class="input--style-2"
-                        type="text"
-                        placeholder="Username"
-                        name="restaurant_username"
-                      />
-                    </div>
-                    <div class="input-group">
-                      <input
-                        class="input--style-2"
-                        type="password"
-                        placeholder="Password"
-                        name="restaurant_password"
-                      />
-                    </div>
-                    <div class="input-group">
-                      <input
-                        class="input--style-2"
-                        type="password"
-                        placeholder="Confirm Password"
-                      />
-                    </div>
-                    <div class="p-t-30">
-                      <input
-                        class="btn btn--radius btn--green"
-                        type="submit"
-                        value="Signin"
-                      />
-                    </div>
-                  </>
+                  <RestaurantRegistration/>
                 ) : (
                   ""
                 )}
