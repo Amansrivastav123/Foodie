@@ -6,13 +6,13 @@ export const FoodieRegistration = () => {
   const [foodie_mobile, setfoodie_mobile] = useState("");
   const [foodie_password, setfoodie_password] = useState("");
   const registerfoodie = () => {
-    Axios.post("http://localhost:3001/register", {
+    Axios.post("http://localhost:3001/api/foodieRegistration", {
       firstname: fname,
       lastname: lname,
       mobile: foodie_mobile,
       password: foodie_password,
-    }).then((response) => {
-      console.log(response);
+    }).then(() => {
+      alert("foodie registered successfully")
     });
   };
   return (
